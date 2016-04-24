@@ -8,6 +8,18 @@ import {
   GatewayProvider
 } from '../src/index.js';
 
+// React v15 uses commment nodes for empty components instead of `<noscript />`
+// so in those cases we can skip rendering children
+const emptyComponent = (function emptyComponent() {
+  const [major, minor, patch] = React.version.split('.').map(Number);
+
+  if (major >= 15) {
+    return null;
+  }
+
+  return <noscript />;
+})();
+
 function render(jsx) {
   return ReactDOMServer.renderToStaticMarkup(jsx);
 }
@@ -32,7 +44,7 @@ describe('Gateway', function() {
       // should equal
       <div>
         <section>
-          <noscript/>
+          {emptyComponent}
         </section>
         <div>Hello World</div>
       </div>
@@ -75,8 +87,8 @@ describe('Gateway', function() {
       </GatewayProvider>,
       // should equal
       <div>
-        <noscript/>
-        <noscript/>
+        {emptyComponent}
+        {emptyComponent}
         <div>Two</div>
         <div>One</div>
       </div>
@@ -136,7 +148,7 @@ describe('Gateway', function() {
       <Application/>,
       // should equal
       <div>
-        <noscript/>
+        {emptyComponent}
         <div>
           <span>Hello from context</span>
         </div>
