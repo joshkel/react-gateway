@@ -22,6 +22,7 @@
   "repository": "https://github.com/cloudflare/react-gateway",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "lodash": "^3.10.1 || ^4.11.1",
     "react": "^0.14.2",
     "react-prop-types": "^0.3.0",
     "react": "^0.14.2 || ^15.0.0"

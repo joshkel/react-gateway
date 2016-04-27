@@ -1,3 +1,5 @@
-export Gateway from './Gateway';
-export GatewayDest from './GatewayDest';
-export GatewayProvider from './GatewayProvider';
+import Gateway from './Gateway';
+import GatewayDest from './GatewayDest';
+import GatewayProvider from './GatewayProvider';
+
+export { Gateway, GatewayDest, GatewayProvider };

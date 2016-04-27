@@ -1,3 +1,5 @@
+import { toArray, compact } from 'lodash';
+
 export default class GatewayRegistry {
   constructor() {
     this._containers = {};
@@ -10,7 +12,7 @@ export default class GatewayRegistry {
     }
 
     this._containers[name].setState({
-      child: this._children[name]
+      children: toArray(this._children[name])
     });
   }
 
@@ -23,23 +25,20 @@ export default class GatewayRegistry {
     this._containers[name] = null;
   }
 
-  addChild(name, child) {
-    if (this._children[name]) {
-      console.warn(
-        'Only a single Gateway can be rendered at a time into a GatewayDest.' +
-        `You rendered multiple into "${name}"`
-      );
+  addChild(name, child, gatewayId) {
+    if (!this._children[name]) {
+      this._children[name] = {};
     }
-    this._children[name] = child;
+    this._children[name][gatewayId] = child;
     this._renderContainer(name);
   }
 
-  clearChild(name) {
-    this._children[name] = null;
+  clearChild(name, gatewayId) {
+    delete this._children[name][gatewayId];
   }
 
-  removeChild(name) {
-    this.clearChild(name);
+  removeChild(name, gatewayId) {
+    this.clearChild(name, gatewayId);
     this._renderContainer(name);
   }
 }

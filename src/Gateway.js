@@ -8,6 +8,7 @@ export default class Gateway extends React.Component {
 
   static propTypes = {
     into: React.PropTypes.string.isRequired,
+    id: React.PropTypes.string.isRequired,
     children: React.PropTypes.oneOfType([
       React.PropTypes.element,
       React.PropTypes.string
@@ -24,16 +25,15 @@ export default class Gateway extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    this.gatewayRegistry.clearChild(this.props.into);
     this.renderIntoGatewayNode(props);
   }
 
   componentWillUnmount() {
-    this.gatewayRegistry.removeChild(this.props.into);
+    this.gatewayRegistry.removeChild(this.props.into, this.props.id);
   }
 
   renderIntoGatewayNode(props) {
-    this.gatewayRegistry.addChild(this.props.into, props.children);
+    this.gatewayRegistry.addChild(props.into, props.children, props.id);
   }
 
   render() {
