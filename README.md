@@ -1,3 +1,22 @@
+This fork adds support for multiple children in the same gateway dest, main reason is crossfading animations.
+
+The gateway components must now have an id prop like this:
+
+```js
+  <Gateway
+    id="stuff"
+    into="someGatweayDest"
+  >
+    Stuff
+  </Gateway>
+  <Gateway
+    id="otherStuff"
+    into="someGatweayDest"
+  >
+    Other stuff
+  </Gateway>
+```
+******************************************************************
 # React Gateway
 
 > Render React DOM into a new context (aka "Portal")
