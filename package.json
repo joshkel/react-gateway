@@ -1,6 +1,6 @@
 {
   "name": "react-gateway",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Render React DOM into a new context",
   "main": "lib/index.js",
   "scripts": {
@@ -23,9 +23,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "lodash": "^3.10.1 || ^4.11.1",
-    "react": "^0.14.2",
-    "react-prop-types": "^0.3.0",
-    "react": "^0.14.2 || ^15.0.0"
+    "react": "^15.0.0-0",
+    "react-prop-types": "^0.4.0"
   },
   "devDependencies": {
     "babel-cli": "^6.1.1",
@@ -53,7 +52,7 @@
     "karma-tape-reporter": "^1.0.3",
     "minimist": "^1.2.0",
     "mocha": "^2.3.3",
-    "react-addons-test-utils": "^0.14.2 || ^15.0.0-rc.2",
-    "react-dom": "^0.14.2 || ^15.0.0-rc.2"
+    "react-addons-test-utils": "^15.0.0-0",
+    "react-dom": "^15.0.0-0"
   }
 }

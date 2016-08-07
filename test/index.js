@@ -43,9 +43,13 @@ describe('Gateway', function() {
       </GatewayProvider>,
       // should equal
       <div>
+<<<<<<< HEAD
         <section>
           {emptyComponent}
         </section>
+=======
+        <section/>
+>>>>>>> 53edab19f44f8dba01b923ab7d55f4e80b62f763
         <div>Hello World</div>
       </div>
     );
@@ -87,8 +91,11 @@ describe('Gateway', function() {
       </GatewayProvider>,
       // should equal
       <div>
+<<<<<<< HEAD
         {emptyComponent}
         {emptyComponent}
+=======
+>>>>>>> 53edab19f44f8dba01b923ab7d55f4e80b62f763
         <div>Two</div>
         <div>One</div>
       </div>
@@ -148,7 +155,10 @@ describe('Gateway', function() {
       <Application/>,
       // should equal
       <div>
+<<<<<<< HEAD
         {emptyComponent}
+=======
+>>>>>>> 53edab19f44f8dba01b923ab7d55f4e80b62f763
         <div>
           <span>Hello from context</span>
         </div>

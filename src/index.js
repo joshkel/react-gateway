@@ -1,5 +1,3 @@
-import Gateway from './Gateway';
-import GatewayDest from './GatewayDest';
-import GatewayProvider from './GatewayProvider';
-
-export { Gateway, GatewayDest, GatewayProvider };
+export { default as Gateway } from './Gateway';
+export { default as GatewayDest } from './GatewayDest';
+export { default as GatewayProvider } from './GatewayProvider';
